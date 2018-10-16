@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Configuration status="ERROR">
+    <properties>
+        <property name="LOG_HOME">D:/logs</property>
+        <property name="FILE_NAME">mylog</property>
+        <property name="log.sql.level">info</property>
+    </properties>
+
+
+    <Appenders>
+        <!--<Console name="Console" target="SYSTEM_OUT">-->
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %l - %msg%n" />-->
+        <!--</Console>-->
+
+        <RollingRandomAccessFile name="RollingRandomAccessFile"
+                                 fileName="logs/${FILE_NAME}.log"
+                                 filePattern="logs/${FILE_NAME}-%d{yyyy-MM-dd HH-mm}-%i.log">
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %l - %msg%n"/>-->
+            <PatternLayout>
+                <pattern>
+                    <![CDATA[
+                    %d{HH:mm:ss.SSS} [%t] %-5level %l - %msg%n
+                    ]]>
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <!--<AppenderRef ref="Console" />-->
+            <AppenderRef ref="RollingRandomAccessFile" />
+        </Root>
+
+    </Loggers>
+</Configuration>
