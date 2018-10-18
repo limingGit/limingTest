@@ -67,28 +67,6 @@
     </dependency>
     <!-- log4j end-->
 
-    <!-- JDK 1.8+ compatible -->
-    <dependency>
-      <groupId>org.redisson</groupId>
-      <artifactId>redisson</artifactId>
-      <version>3.5.4</version>
-    </dependency>
-
-    <!--spring-->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>4.2.7.RELEASE</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>4.2.7.RELEASE</version>
-    </dependency> <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context</artifactId>
-    <version>4.2.7.RELEASE</version>
-  </dependency>
 
   </dependencies>
 
